@@ -9,10 +9,27 @@ const outputOverlay = document.querySelector(".output-overlay");
 const spinButton = document.getElementById("spin-button");
 const reels = document.querySelectorAll(".reel");
 
+const sounds = [
+    document.getElementById("snd1"),
+    document.getElementById("snd2"),
+    document.getElementById("snd3"),
+    document.getElementById("snd4"),
+    document.getElementById("snd5"),
+    document.getElementById("snd6"),
+    document.getElementById("snd7"),
+];
+
+function playSound(soundIndex) {
+    if (soundIndex >= 0 && soundIndex < sounds.length) {
+        sounds[soundIndex].play();
+    }
+}
+
 function getRandomLetter() {
     const letterArray = letters.split(' ');
     return letterArray[Math.floor(Math.random() * letterArray.length)];
 }
+reelIndex = 0;
 
 async function spinReel(reel) {
     return new Promise(resolve => {
@@ -28,6 +45,8 @@ async function spinReel(reel) {
             resolve();
             reel.style.borderColor = "rgba(255, 97, 47, 1)";
             span.style.color = "rgba(255,255,255,1)";
+                playSound(reelIndex);
+                reelIndex++; // Increment the reel index
         }, spinDuration);
     });
 }
@@ -71,6 +90,7 @@ async function spinAllReels() {
         outputOverlay.style.animation="fade 1s ease";
         outputTxt.textContent = `${poop}`;
         spinButton.disabled = false;
+        document.getElementById("snd8").play();
     
         setTimeout(() => {
             spinButton.textContent = "Spin";
@@ -90,6 +110,7 @@ respinButton.addEventListener("click", function () {
     const span = reel.querySelector("span");
     span.style.color = "rgba(255,255,255,0.2)";
     reel.style.borderColor = "rgba(255, 97, 47, 0.1)";
+    reelIndex = 0;
     }
     spinAllReels();
 });
