@@ -1,0 +1,172 @@
+html, body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-image: url('./4k.png');
+    background-color: #000;
+    background-size: 100%;
+    color: white;
+    user-select: none;
+    font-family: 'Jua';
+    font-size: 20px;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slot-machine {
+    text-align: center;
+    background-color: #160804;
+    padding: 70px;
+    border-radius: 10px;
+    position: relative;
+    width: 800px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.slot-machine img {
+    width: 600px;
+    display: block;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.intro-text {
+    margin-bottom: 20px;
+    display: block;
+    margin: auto;
+}
+
+.reels {
+    display: none;
+    justify-content: space-around;
+    margin: 20px;
+    font-size: 24px;
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.reel {
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(255, 97, 47, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    font-size: 70px;
+    margin: 0px 5px;
+    transition: border .6s ease;
+}
+
+.reel span {
+    margin: auto;
+    color:rgba(255,255,255,0);
+    transition: color 0.2s ease;
+}
+
+#spin-button {
+    padding: 10px 30px;
+    font-size: 30px;
+    background-color: #FF612F;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Jua';
+}
+
+#respin-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #FF612F;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Jua';
+}
+
+#copy-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #FF612F;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Jua';
+}
+
+button {
+    opacity: 0.7;
+    top: 0;
+    position: relative;
+    transition: top .2s ease;
+    user-select: none;
+    transition: opacity .2s ease, transform .2s ease;
+}
+button:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+}
+button:active {
+    transform: translateY(5px);
+    opacity: 0.4;
+}
+.output-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    backdrop-filter: blur(10px);
+}
+
+.output {
+    background-color: rgba(55, 21, 10, 1);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.output p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.output h1 {
+    font-size: 90px;
+    margin: 0;
+}
+
+@keyframes zoom {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes fade {
+    0% {
+        backdrop-filter: blur(0px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        backdrop-filter: blur(10px);
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Name-orator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="./icon.png"> 
+</head>
+<body>
+    <div class="slot-machine">
+        <img draggable="false" src="./namegenerator.svg"/>
+        <div class="intro-text">
+            <p>Press the "Spin" button to generate a random name!</p>
+            <button id="spin-button">Spin</button>
+        </div>
+        <div class="reels">
+            <div class="reel" id="reel1"><span></span></div>
+            <div class="reel" id="reel2"><span></span></div>
+            <div class="reel" id="reel3"><span></span></div>
+            <div class="reel" id="reel4"><span></span></div>
+            <div class="reel" id="reel5"><span></span></div>
+            <div class="reel" id="reel6"><span></span></div>
+            <div class="reel" id="reel7"><span></span></div>
+        </div>
+        <div class="output-overlay" style="display: none;">
+            <div class="output">
+                <p>Your new name is...</p>
+                <h1 class="output-text"></h1>
+                <div class="side">
+                    <button id="respin-button">Respin</button>
+                    <button id="copy-button">Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
